@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import S from "./Style";
+import BackButton from "../../modules/BackButton"; // 경로 주의
 
 const Layout = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -19,14 +20,18 @@ const Layout = () => {
   };
 
   const handleLogoClick = () => {
-    navigate("/"); // 홈으로 이동
+    navigate("/");
   };
 
   return (
     <div>
       <S.Header>
-        <S.Logo src="/images/bock.png" alt="BOCK 로고" onClick={handleLogoClick} style={{ cursor: 'pointer' }} />
-        {/* 👆 로고에 onClick 연결하고 커서도 pointer로 */}
+        <S.Logo
+          src="/images/bock.png"
+          alt="BOCK 로고"
+          onClick={handleLogoClick}
+          style={{ cursor: "pointer" }}
+        />
         <S.ButtonWrapper>
           {isLogin ? (
             <S.Button onClick={handleLogout}>로그아웃</S.Button>
@@ -39,6 +44,7 @@ const Layout = () => {
         </S.ButtonWrapper>
       </S.Header>
 
+      <BackButton /> {/* 뒤로가기 버튼 추가 */}
       <Outlet />
     </div>
   );

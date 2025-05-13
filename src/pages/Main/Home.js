@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
+// 로그인 안되어 있을 시 나오는 모달
 const LoginRequiredModal = ({ onClose, onConfirm }) => {
   return (
     <div
@@ -56,16 +57,32 @@ const LoginRequiredModal = ({ onClose, onConfirm }) => {
 };
 
 const Home = () => {
+  // 로그인 상태에 따라 모달을 열기 위한 상태 변수
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // 로그인 상태를 관리하는 상태 변수
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
-  const handleRequireLogin = () => {
-    setIsModalOpen(true);
+  // 로그인 상태에 따라 페이지 이동 처리
+  const handleProtectedNavigation = (targetPath) => {
+    if (!isLoggedIn) {
+      setIsModalOpen(true);
+    } else {
+      navigate(targetPath);
+    }
   };
 
+  // 테스트
   const goToLogin = () => {
-    navigate("/user/login");
+    // 💡 실제로는 navigate로 로그인 페이지 가면 되고,
+    // 테스트 중엔 아래처럼 상태를 true로 바꾸는 것도 가능
+    setIsLoggedIn(true); // 로그인 된 상태로 전환
+    setIsModalOpen(false);
+    // 또는 navigate("/user/login");
   };
+
+  
 
   return (
     <S.main>
@@ -84,7 +101,7 @@ const Home = () => {
         <S.top>
           <S.searchBox>
             <S.input placeholder="성남에 거주 중인 20대 남자야. 교통사고로 하반신 장애를 갖게 됐어. 받을 수 있는 혜택이 있을까?" />
-            <S.searchIcon onClick={handleRequireLogin}>
+            <S.searchIcon onClick={() => handleProtectedNavigation("/welfare/list")}>
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </S.searchIcon>
           </S.searchBox>
@@ -139,7 +156,11 @@ const Home = () => {
                 "저소득층 기준 어떻게 되나요?",
                 "복지 서비스 중복 신청 가능한가요?",
               ].map((text, i) => (
-                <div className="item" key={i} onClick={handleRequireLogin}>
+                <div
+                  className="item"
+                  key={i}
+                  onClick={() => handleProtectedNavigation("/board/list")}
+                >
                   {text} <span>2025.04.2{i + 1}</span>
                 </div>
               ))}
@@ -160,7 +181,11 @@ const Home = () => {
                 "독거노인 건강음료비 지원",
                 "용인시 저소득 한부모가족 지원사업",
               ].map((item, i) => (
-                <div className="item" key={i} onClick={handleRequireLogin}>
+                <div
+                  className="item"
+                  key={i}
+                  onClick={() => handleProtectedNavigation("/welfare/list")}
+                >
                   {item}
                 </div>
               ))}
