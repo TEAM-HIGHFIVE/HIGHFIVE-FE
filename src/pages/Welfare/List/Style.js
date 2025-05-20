@@ -12,8 +12,7 @@ S.Wrapper = styled.div`
 `;
 
 S.SearchContainer = styled.div`
-  width: 100%;
-  max-width: 720px;
+  width: 75%;
   background-color: white;
   padding: 24px;
   border-radius: 16px;
@@ -71,7 +70,7 @@ S.Value = styled.span`
 
 S.ListContainer = styled.div`
   width: 100%;
-  max-width: 720px;
+  max-width: 75vw;
   background-color: white;
   padding: 24px;
   border-radius: 16px;

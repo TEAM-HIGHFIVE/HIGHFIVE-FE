@@ -5,17 +5,15 @@ const S = {};
 S.Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #f0f0f0;
-  padding: 60px 0;
+  background-color: #ffffff;
 `;
 
 S.Container = styled.div`
-  width: 90%;
-  max-width: 720px;
+  width: 100%;
+  max-width: 75vw;
   background-color: #fff;
   padding: 24px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 `;
 
 S.Title = styled.h1`

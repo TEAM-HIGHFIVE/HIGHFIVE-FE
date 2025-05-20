@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 60%;
+  width: 100%;
+  max-width: 75vw;
   margin: 40px auto;
   font-family: sans-serif;
 `;
 
 const PostBox = styled.div`
   background-color: #f5f5f5;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   margin-bottom: 30px;
@@ -23,7 +27,7 @@ const Title = styled.h2`
 const Date = styled.div`
   font-size: 14px;
   color: gray;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 `;
 
 const Content = styled.div`

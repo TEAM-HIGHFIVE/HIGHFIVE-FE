@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  max-width: 1200px;
+  width: 100%;
+  max-width: 75vw;
   margin: 0 auto;
 `;
 
@@ -67,6 +68,7 @@ const Section = styled.div`
   margin-bottom: 10px;
   background-color: #fff;
   padding: 10px;
+  padding-left: 30px;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
 `;
@@ -96,6 +98,7 @@ const DownloadButton = styled.button`
   color: white;
   border: none;
   border-radius: 8px;
+  margin-bottom: 20px;
   font-size: 14px;
   cursor: pointer;
 `;
