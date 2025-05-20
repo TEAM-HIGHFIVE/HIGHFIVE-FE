@@ -1,27 +1,44 @@
+// src/layouts/Style.js
 import styled from "styled-components";
 
 const S = {};
 
 S.Header = styled.header`
-  width: 100vw;
+  /* main 컨테이너(80vw)와 동일한 너비로 중앙 정렬 */
+  width: 80vw;
+  margin: 0 auto;
   height: 15vh;
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end;  /* 버튼을 오른쪽 끝에 배치 */
   align-items: center;
-  padding: 0 50px;
+  /* main과 맞추기 위해 좌우 패딩 3% */
+  padding: 0 3%;
   box-sizing: border-box;
   background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0; /* 👈 추가 */
+  margin-top: 50px;
+  margin-bottom: 10px;
+  border-bottom: none;
 `;
 
-
-S.Logo = styled.img`
+S.Middle = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`;
+
+S.Logo = styled.img`
   height: 70%;
   object-fit: contain;
+`;
+
+S.Title = styled.h1`
+  margin-left: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
 `;
 
 S.ButtonWrapper = styled.div`
@@ -32,15 +49,11 @@ S.ButtonWrapper = styled.div`
 S.Button = styled.button`
   padding: 8px 16px;
   font-size: 16px;
+  font-weight: bold;     /* 버튼 텍스트를 굵게 */
   cursor: pointer;
-  background-color: transparent;
-  border: 1px solid #ccc;
+  background: none;
+  border: none;
   border-radius: 4px;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #f0f0f0;
-  }
 `;
 
 export default S;

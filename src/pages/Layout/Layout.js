@@ -1,37 +1,25 @@
+// src/layouts/Layout.jsx
 import React, { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import S from "./Style";
-import BackButton from "../../modules/BackButton"; // 경로 주의
+import BackButton from "../../modules/BackButton";
 
 const Layout = () => {
   const [isLogin, setIsLogin] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    navigate("/user/login");
-  };
-
-  const handleLogout = () => {
-    setIsLogin(false);
-  };
-
-  const handleJoin = () => {
-    navigate("/user/join");
-  };
-
-  const handleLogoClick = () => {
-    navigate("/");
-  };
+  const handleLogin = () => navigate("/user/login");
+  const handleLogout = () => setIsLogin(false);
+  const handleJoin = () => navigate("/user/join");
+  const handleLogoClick = () => navigate("/");
 
   return (
-    <div>
+    <>
       <S.Header>
-        <S.Logo
-          src="/images/bock.png"
-          alt="BOCK 로고"
-          onClick={handleLogoClick}
-          style={{ cursor: "pointer" }}
-        />
+        <S.Middle onClick={handleLogoClick}>
+          <S.Logo src="/images/bock.png" alt="BOCK 로고" />
+          <S.Title>BOCK-GPT</S.Title>
+        </S.Middle>
         <S.ButtonWrapper>
           {isLogin ? (
             <S.Button onClick={handleLogout}>로그아웃</S.Button>
@@ -44,9 +32,9 @@ const Layout = () => {
         </S.ButtonWrapper>
       </S.Header>
 
-      <BackButton /> {/* 뒤로가기 버튼 추가 */}
+      <BackButton />
       <Outlet />
-    </div>
+    </>
   );
 };
 

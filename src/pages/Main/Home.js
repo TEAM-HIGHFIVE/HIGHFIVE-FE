@@ -143,7 +143,7 @@ const Home = () => {
       </div>
 
       <S.bottom>
-        <div style={{ width: "50%", position: "relative" }}>
+        <div style={{ width: "60%", position: "relative", left: "-2vw" }}>
           <S.absoluteTitle style={{ top: "-3vw", left: "0" }}>
             최근 게시물
           </S.absoluteTitle>
@@ -168,7 +168,7 @@ const Home = () => {
           </S.recent>
         </div>
 
-        <div style={{ width: "45%", position: "relative" }}>
+        <div style={{ width: "55%", position: "relative", left: "2vw" }}>
           <S.absoluteTitle style={{ top: "-3vw", left: "0" }}>
             자주 찾는 복지 서비스
           </S.absoluteTitle>

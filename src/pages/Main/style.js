@@ -1,5 +1,4 @@
 // style.js
-
 import styled from "styled-components";
 
 export const S = {
@@ -21,6 +20,8 @@ export const S = {
     border-radius: 12px;
     position: relative;
     margin-top: 5%;
+    /* drop shadow: x=0 y=4 blur=4 spread=0 color=rgba(0,0,0,0.25) */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   `,
 
   absoluteTitle: styled.h2`
@@ -36,12 +37,14 @@ export const S = {
     align-items: center;
     gap: 2%;
     margin-bottom: 2%;
-    margin-top: -2vw; /* ✅ 추가: 위로 약간 올림 */
+    margin-top: -2vw;
   `,
 
   input: styled.input`
-    width: 90%;
-    padding: 1.2%;
+    width: 100%;
+    height: 60px;
+    radius: 15px;
+    padding-left: 2%;
     font-size: 1vw;
   `,
 
@@ -53,6 +56,7 @@ export const S = {
   conditionBox: styled.div`
     display: flex;
     justify-content: space-around;
+    align-items: stretch;
     flex-wrap: wrap;
     gap: 4%;
   `,
@@ -63,6 +67,8 @@ export const S = {
 
   section2: styled.div`
     width: 35%;
+    display: flex;
+    flex-direction: column;
   `,
 
   sectionTitle: styled.h3`
@@ -71,23 +77,21 @@ export const S = {
   `,
 
   tagGroup: styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(80px, auto));
+    row-gap: 8px;
+    column-gap: 12px;
   `,
 
   radioLabel: styled.label`
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 1vw;
+    gap: 4px;
+    font-size: 0.8vw;
     color: #333;
     cursor: pointer;
-    flex: 1 0 30%;
-    max-width: 40%;
-    margin-top: 15px;
-    margin-bottom: 8px;
+    white-space: nowrap;
+    margin: 4px 0;
 
     input[type="radio"] {
       accent-color: #4a90e2;
@@ -103,18 +107,19 @@ export const S = {
 
   regionGrid: styled.div`
     display: grid;
-    grid-template-columns: repeat(7, minmax(80px, 1fr));
-    gap: 12px 16px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, auto));
+    gap: 8px 12px;
   `,
 
   regionRadioLabel: styled.label`
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     font-size: 0.8vw;
     color: #333;
     cursor: pointer;
     white-space: nowrap;
+    margin: 4px 0;
 
     input[type="radio"] {
       accent-color: #4a90e2;
@@ -138,6 +143,16 @@ export const S = {
     box-sizing: border-box;
   `,
 
+  bottomLeft: styled.div`
+    width: 60%;
+    position: relative;
+  `,
+
+  bottomRight: styled.div`
+    width: 35%;
+    position: relative;
+  `,
+
   recent: styled.div`
     width: 100%;
     background-color: #f5f5f5;
@@ -146,6 +161,8 @@ export const S = {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    /* drop shadow: x=0 y=4 blur=4 spread=0 color=rgba(0,0,0,0.25) */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     ul {
       width: 100%;
@@ -157,7 +174,7 @@ export const S = {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 12px;
+      padding: 12px;
       border-bottom: 1px solid #ddd;
       font-size: 1vw;
       cursor: pointer;
@@ -176,6 +193,8 @@ export const S = {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    /* drop shadow: x=0 y=4 blur=4 spread=0 color=rgba(0,0,0,0.25) */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     ul {
       width: 100%;
@@ -187,7 +206,7 @@ export const S = {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 12px;
+      padding: 12px;
       border-bottom: 1px solid #ddd;
       font-size: 1vw;
       cursor: pointer;
