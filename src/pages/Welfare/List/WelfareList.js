@@ -52,10 +52,9 @@ const WelfarePage = () => {
     <S.Wrapper>
       <S.SearchContainer>
         <S.SearchBox>
-          <S.Input
-            type="text"
-            placeholder="성남에 거주 중인 20대 남자야. 교통사고로 하반신 장애를 갖게 됐어. 받을 수 있는 혜택이 있을까?"
-          />
+          <S.Label>
+            성남에 거주 중인 20대 남자야. 교통사고로 하반신 장애를 갖게 됐어. 받을 수 있는 혜택이 있을까?
+          </S.Label>
           <S.SearchIcon>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </S.SearchIcon>

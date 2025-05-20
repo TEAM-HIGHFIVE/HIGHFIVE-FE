@@ -16,7 +16,7 @@ S.Header = styled.header`
   padding: 0 3%;
   box-sizing: border-box;
   background-color: #ffffff;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 10px;
   border-bottom: none;
 `;

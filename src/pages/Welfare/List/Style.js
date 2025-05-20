@@ -7,7 +7,7 @@ S.Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   padding: 40px 20px;
 `;
 
@@ -18,11 +18,15 @@ S.SearchContainer = styled.div`
   padding: 24px;
   border-radius: 16px;
   margin-bottom: 40px;
+  background-color: #fafafa;
 `;
 
 S.SearchBox = styled.div`
   position: relative;
-  margin-bottom: 16px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  font-weight: bold;
 `;
 
 S.Input = styled.input`
